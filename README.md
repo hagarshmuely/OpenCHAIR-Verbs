@@ -10,7 +10,6 @@ Understanding human actions involving chairs—such as sitting, standing, pushin
 
 - **Dataset**: Annotated video clips or images labeled with chair-related verbs.
 - **Code**: Scripts for preprocessing, training baseline models, and evaluation.
-- **Documentation**: Instructions for usage, dataset format, and contribution guidelines.
 
 ## Dataset
 
