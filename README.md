@@ -35,10 +35,11 @@ We also publish a cleaned and validated verb-centric subset under the name:
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Environment Setup
 
-### 1. Install dependencies
+### 1. Clone the repository
 
 ```bash
-pip install -r requirements.txt
-python -m spacy download en_core_web_sm
+conda env create -f environment.yml
+conda activate mocha
+```
