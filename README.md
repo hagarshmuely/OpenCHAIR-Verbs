@@ -1,19 +1,44 @@
 # OpenCHAIR-Verbs
 
-OpenCHAIR-Verbs is a dataset and toolkit designed for action recognition and analysis focusing on verbs related to human activities involving chairs. This repository provides annotated data, baseline models, and tools for research in computer vision, robotics, and human-computer interaction.
+**An extension of [OpenCHAIR](https://huggingface.co/papers/2312.03631) focused on verb-centric action understanding in image captioning**
 
-## 🚀 Overview
+---
 
-Understanding human actions involving chairs—such as sitting, standing, pushing, or pulling—is crucial for numerous applications including assistive robotics, video surveillance, and behavioral analysis. OpenCHAIR-Verbs offers a structured dataset and accompanying code to advance research in this domain.
+## Overview
 
-## 📦 Repository Contents
+**OpenCHAIR-Verbs** builds on the [OpenCHAIR benchmark](https://huggingface.co/papers/2312.03631) introduced by Ben-Kish et al. (EMNLP 2024), which evaluates hallucinations in open-vocabulary image captioning. While OpenCHAIR focuses on **object hallucination**, OpenCHAIR-Verbs shifts the focus to **verbs and actions**—critical for evaluating how well captioning models describe **what is happening** in an image.
 
-- **Dataset**: Annotated video clips or images labeled with chair-related verbs.
-- **Code**: Scripts for preprocessing, training baseline models, and evaluation.
-- **Documentation**: Instructions for usage, dataset format, and contribution guidelines.
+---
 
-## Dataset
+## 🎯 Motivation
 
-The dataset is also available on Hugging Face:  
-https://huggingface.co/datasets/Hagarsh/OpenCHAIR_verb
+- Extend the OpenCHAIR benchmark to **action understanding**, not just object recognition
+- Evaluate models’ ability to **correctly ground verbs** in generated captions
+- Provide a **verb-centric synthetic benchmark** for analyzing hallucinations and misinterpretations in dynamic scenes
 
+
+---
+## 🌐 Public Dataset on Hugging Face
+
+We also publish a cleaned and validated verb-centric subset under the name:
+
+**`Hagarsh/OpenCHAIR_verb`** — a curated image‑caption dataset focused on high-quality verb grounding and action semantics.
+
+## 📦 Repository Structure
+
+- `verb_captions/` — Captions designed around diverse action verbs
+- `generate_images.py` — Generate images from verb-centric captions using image generation models (e.g., SDXL)
+- `save_dataset_hf.py` — Save image-caption dataset in Hugging Face format
+- `human_validation.py` — Script for collecting and processing human validation of generated actions
+- `caption_images_with_different_models.ipynb` — Caption generated images using different models for evaluation
+- `llm_compare_captions.py` — LLM-based comparison of model captions to reference descriptions
+
+---
+
+## 🚀 Getting Started
+
+### 1. Install dependencies
+
+```bash
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
